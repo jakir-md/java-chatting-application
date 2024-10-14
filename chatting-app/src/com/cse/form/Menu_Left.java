@@ -5,6 +5,7 @@
 package com.cse.form;
 
 import com.cse.component.Item_People;
+import com.cse.swing.ScrollBar;
 import java.awt.LayoutManager;
 import net.miginfocom.swing.MigLayout;
 
@@ -23,6 +24,7 @@ public class Menu_Left extends javax.swing.JPanel {
     }
     
     private void init(){
+        sp.setVerticalScrollBar(new ScrollBar());
         menuList.setLayout(new MigLayout("fillx", "0[]0", "0[]0"));
         showPeople();
     }
@@ -77,6 +79,7 @@ public class Menu_Left extends javax.swing.JPanel {
         });
         menu.add(menuButton3);
 
+        sp.setBorder(null);
         sp.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         javax.swing.GroupLayout menuListLayout = new javax.swing.GroupLayout(menuList);
@@ -87,7 +90,7 @@ public class Menu_Left extends javax.swing.JPanel {
         );
         menuListLayout.setVerticalGroup(
             menuListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 485, Short.MAX_VALUE)
+            .addGap(0, 487, Short.MAX_VALUE)
         );
 
         sp.setViewportView(menuList);

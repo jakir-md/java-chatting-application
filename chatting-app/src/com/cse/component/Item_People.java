@@ -4,6 +4,10 @@
  */
 package com.cse.component;
 
+import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 /**
  *
  * @author Jakir
@@ -16,8 +20,22 @@ public class Item_People extends javax.swing.JPanel {
     public Item_People(String name) {
         initComponents();
         lb.setText(name);
+        init();
     }
 
+    private void init(){
+        addMouseListener(new MouseAdapter(){
+            @Override 
+            public void mouseEntered(MouseEvent me){
+                setBackground(new Color(255,236,209));
+            }
+            
+            @Override 
+            public void mouseExited(MouseEvent me){
+                setBackground(new Color(229,229,229));
+            }
+        });
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,7 +63,8 @@ public class Item_People extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(imageAvatar1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(lb, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lb, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
